@@ -16,6 +16,13 @@ const userSchema = new Schema({
          required:true,
          minlength:6
      },
+
+    addedEvents:[
+        {
+            type:mongoose.Types.ObjectId,
+            ref:'Event'
+        }
+    ]
     
     
 });
