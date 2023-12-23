@@ -41,7 +41,7 @@ const hashedPassword = await bcrypt.hash(password, 12);
         return res.status(500).json({ message: 'Could not create user' });
     }
 
-    return res.status(201).json({user});
+    return res.status(201).json({id:user._id,message:"User created successfully"});
 }
 
 
@@ -110,7 +110,7 @@ export const login = async (req, res,next) => {
     }
 
     
-    const isValidPassword = bcrypt.compareSync(user.password,hashedPassword);
+    const isValidPassword = bcrypt.compare(user.password,hashedPassword);
     
 console.log(isValidPassword)
     if(!isValidPassword){
