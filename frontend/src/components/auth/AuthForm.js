@@ -22,7 +22,6 @@ const AuthForm = ({ onSubmit }) => {
     e.preventDefault();
     onSubmit({ inputs, signup: issignup });
 
-    // Redirect after signup or login
     if (issignup) {
       // Redirect to login after signup
       navigate('/');
